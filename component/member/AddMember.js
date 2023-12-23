@@ -182,6 +182,7 @@ const AddMember = () => {
               );
             }}
             onback={async () => {
+              dispatch(addMemberAsync({ ...memberData, username }));
               route.push(`/memberlist`);
             }}
             onClose={() => {

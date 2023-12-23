@@ -152,15 +152,17 @@ const MemberList = () => {
             ) : (
               <td colSpan="4" style={{ paddingTop: "1em" }}>
                 <div>
-                  {" "}
+                  <div className="flex justify-center items-center">
+                    <b className="text-red-500 m-8">Member Not found</b>
+                  </div>
                   {/* Wrap the content in a div */}
-                  {member.length === 0 ? (
+                  {/* {member.length === 0 ? (
                     <SkeletonTable numRows={5} numColumns={6} color="#FF5555" />
                   ) : (
                     <div className="flex justify-center items-center">
                       <b className="text-red-500 m-8">Member Not found</b>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </td>
             )}

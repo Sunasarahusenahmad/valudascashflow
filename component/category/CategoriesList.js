@@ -77,6 +77,7 @@ const CategoriesList = () => {
 
       try {
         dispatch(editCategoryAsync(editingCategoryId, catData));
+        window.location.reload();
 
         dispatch(fetchCategoryAsync());
         setValidationError("");
@@ -97,6 +98,8 @@ const CategoriesList = () => {
             Successfully.
           </div>
         );
+        window.location.reload();
+
         dispatch(fetchCategoryAsync());
         setValidationError("");
       } catch (err) {
@@ -274,15 +277,17 @@ const CategoriesList = () => {
             ) : (
               <td colSpan="4" style={{ paddingTop: "1em" }}>
                 <div>
-                  {" "}
+                  <div className="flex justify-center items-center">
+                    <b className="text-red-500 m-8">Categories Not found</b>
+                  </div>
                   {/* Wrap the content in a div */}
-                  {categories.length === 0 ? (
+                  {/* {categories.length === 0 ? (
                     <SkeletonTable numRows={4} numColumns={2} color="#FF5555" />
                   ) : (
                     <div className="flex justify-center items-center">
                       <b className="text-red-500 m-8">Categories Not found</b>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </td>
             )}
